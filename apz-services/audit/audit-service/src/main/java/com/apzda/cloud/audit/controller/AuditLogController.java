@@ -20,12 +20,12 @@ import com.apzda.cloud.audit.proto.AuditService;
 import com.apzda.cloud.audit.proto.Query;
 import com.apzda.cloud.audit.proto.QueryRes;
 import com.apzda.cloud.gsvc.dto.Response;
+import com.apzda.cloud.gsvc.ext.GsvcExt;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author fengz (windywany@gmail.com)
@@ -45,10 +45,25 @@ public class AuditLogController {
         return Response.wrap(auditService.logs(query));
     }
 
+    @GetMapping("/logs")
+    @PreAuthorize("@authz.iCan('r:auditlog')")
+    public Response<QueryRes> getLogs(GsvcExt.Pager pager) {
+        Query.Builder query = Query.newBuilder();
+        query.setPager(pager);
+
+        return Response.wrap(auditService.logs(query.build()));
+    }
+
     @PostMapping("/my-activities")
     @PreAuthorize("isAuthenticated()")
     public Response<QueryRes> myActivities(@RequestBody Query query) {
         return Response.wrap(auditService.myLogs(query));
+    }
+
+    @GetMapping("/ok")
+    public Response<String> ok() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
+        return Response.success("OK");
     }
 
 }

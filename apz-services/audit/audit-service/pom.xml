@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.apzda.cloud</groupId>
-            <artifactId>domain</artifactId>
+            <artifactId>apzda-cloud-gsvc-jpa</artifactId>
         </dependency>
         <!-- spring boot -->
         <dependency>

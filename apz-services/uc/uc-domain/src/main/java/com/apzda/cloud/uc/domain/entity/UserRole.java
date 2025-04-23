@@ -1,6 +1,6 @@
 package com.apzda.cloud.uc.domain.entity;
 
-import com.apzda.cloud.gsvc.domain.SnowflakeIdGenerator;
+import com.apzda.cloud.gsvc.jpa.SnowflakeId;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -15,7 +15,7 @@ import org.hibernate.annotations.ColumnDefault;
 public class UserRole {
 
     @Id
-    @GeneratedValue(generator = SnowflakeIdGenerator.NAME, strategy = GenerationType.SEQUENCE)
+    @SnowflakeId
     private Long id;
 
     @Column(name = "created_at")

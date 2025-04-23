@@ -16,8 +16,9 @@
  */
 package com.apzda.cloud.config.domain.entity;
 
-import com.apzda.cloud.gsvc.domain.TenantableEntity;
+import com.apzda.cloud.gsvc.jpa.entity.AuditableEntity;
 import com.apzda.cloud.gsvc.model.SoftDeletable;
+import com.apzda.cloud.gsvc.model.Tenantable;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -44,7 +45,7 @@ import org.hibernate.type.SqlTypes;
 @SQLRestriction("deleted = false")
 @SQLDelete(sql = "UPDATE apzda_base_setting SET deleted = true WHERE id=? AND version=?")
 @Table(name = "apzda_base_setting")
-public class Setting extends TenantableEntity<Long, String, Long, String> implements SoftDeletable {
+public class Setting extends AuditableEntity<Long, String, Long> implements Tenantable<String>, SoftDeletable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

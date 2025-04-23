@@ -63,6 +63,10 @@
             <groupId>com.apzda.cloud</groupId>
             <artifactId>uc-service</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.apzda.cloud</groupId>
+            <artifactId>uc-wx-mp</artifactId>
+        </dependency>
         <!-- application services -->
 
         <!-- application library -->
@@ -71,6 +75,13 @@
             <artifactId>app-common</artifactId>
         </dependency>
         <!-- third library -->
+        <!--
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>

@@ -16,7 +16,7 @@
  */
 package com.apzda.cloud.audit.domain.entity;
 
-import com.apzda.cloud.gsvc.domain.AuditingEntityListener;
+import com.apzda.cloud.gsvc.jpa.AuditingEntityListener;
 import com.apzda.cloud.gsvc.model.Auditable;
 import com.apzda.cloud.gsvc.model.SoftDeletable;
 import com.apzda.cloud.gsvc.model.Tenantable;

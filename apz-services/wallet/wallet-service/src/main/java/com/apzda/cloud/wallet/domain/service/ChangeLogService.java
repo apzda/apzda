@@ -52,16 +52,6 @@ public class ChangeLogService extends ServiceImpl<ChangeLogMapper, ChangeLog> {
     }
 
     @Override
-    public boolean removeBatchByIds(Collection<?> list, int batchSize) {
-        return false;
-    }
-
-    @Override
-    public boolean removeBatchByIds(Collection<?> list, int batchSize, boolean useFill) {
-        return false;
-    }
-
-    @Override
     public boolean removeById(ChangeLog entity) {
         return false;
     }
@@ -83,11 +73,6 @@ public class ChangeLogService extends ServiceImpl<ChangeLogMapper, ChangeLog> {
 
     @Override
     public boolean removeBatchByIds(Collection<?> list) {
-        return false;
-    }
-
-    @Override
-    public boolean removeBatchByIds(Collection<?> list, boolean useFill) {
         return false;
     }
 

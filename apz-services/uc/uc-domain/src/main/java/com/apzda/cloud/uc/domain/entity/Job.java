@@ -1,7 +1,7 @@
 package com.apzda.cloud.uc.domain.entity;
 
-import com.apzda.cloud.gsvc.domain.AuditableEntity;
-import com.apzda.cloud.gsvc.domain.SnowflakeIdGenerator;
+import com.apzda.cloud.gsvc.jpa.SnowflakeId;
+import com.apzda.cloud.gsvc.jpa.entity.AuditableEntity;
 import com.apzda.cloud.gsvc.model.SoftDeletable;
 import com.apzda.cloud.gsvc.model.Tenantable;
 import jakarta.persistence.*;
@@ -19,7 +19,7 @@ import lombok.ToString;
 public class Job extends AuditableEntity<Long, String, Long> implements Tenantable<Long>, SoftDeletable {
 
     @Id
-    @GeneratedValue(generator = SnowflakeIdGenerator.NAME, strategy = GenerationType.SEQUENCE)
+    @SnowflakeId
     private Long id;
 
     @Column(name = "created_at")

@@ -20,7 +20,7 @@ import com.apzda.cloud.config.app.service.SettingService;
 import com.apzda.cloud.config.domain.entity.Revision;
 import com.apzda.cloud.config.domain.entity.Setting;
 import com.apzda.cloud.config.proto.*;
-import com.apzda.cloud.gsvc.domain.PagerUtils;
+import com.apzda.cloud.gsvc.jpa.utils.PagerUtils;
 import com.google.protobuf.ByteString;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,7 +1,10 @@
 package com.apzda.cloud.uc.domain.entity;
 
-import com.apzda.cloud.gsvc.domain.SnowflakeIdGenerator;
-import jakarta.persistence.*;
+import com.apzda.cloud.gsvc.jpa.SnowflakeId;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -16,7 +19,7 @@ public class RoleChild {
 
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(generator = SnowflakeIdGenerator.NAME, strategy = GenerationType.SEQUENCE)
+    @SnowflakeId
     private Long id;
 
     @Column(name = "created_at")
